@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Focus Writer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app" data-theme="paper">
+    <aside id="sidebar">
+      <div class="side-top">
+        <button id="newDoc">+ New note</button>
+        <button id="sideAuto" class="auto-btn">Auto-hide: off</button>
+      </div>
+      <ul id="docList"></ul>
+      <div class="stats">
+        <div id="sessionTime">00:00</div>
+        <div id="wordCount">0 words</div>
+        <div id="goalText"></div>
+      </div>
+      <div class="settings">
+        <select id="theme">
+          <option value="paper">Paper</option>
+          <option value="sepia">Sepia</option>
+          <option value="dark">Dark</option>
+        </select>
+      </div>
+    </aside>
+
+    <main>
+      <div class="page">
+        <input id="title" placeholder="Title" />
+        <div id="editor" contenteditable="true" data-placeholder="Start writing... (right-click for more options)"></div>
+      </div>
+    </main>
+  </div>
+
+  <aside id="toolbar" class="toolbar">
+    <button id="toolAuto" class="auto-btn">Auto-hide: off</button>
+    <button data-act="bold" title="Bold (Ctrl+B)"><b>Bold</b></button>
+    <button data-act="quote" title="Block quote">Quote</button>
+    <button data-act="italic" title="Italic (Ctrl+I)"><i>Italic</i></button>
+    <button data-act="underline" title="Underline (Ctrl+U)"><u>Underline</u></button>
+    <button data-act="strikeThrough" title="Strikethrough"><s>Strike</s></button>
+    <button data-act="highlight" title="Highlight">Highlight</button>
+    <button data-act="heading" title="Heading">Heading</button>
+    <button data-act="insertUnorderedList" title="Bullet list">• Bullets</button>
+    <button data-act="insertOrderedList" title="Numbered list">1. Numbers</button>
+    <button data-act="table" title="Insert table">Table</button>
+    <button data-act="divider" title="Horizontal line">Line</button>
+    <select id="fontFamily" title="Font">
+      <option>Segoe UI Light</option>
+      <option>Segoe UI</option>
+      <option>Georgia</option>
+      <option>Calibri</option>
+      <option>Cambria</option>
+      <option>Times New Roman</option>
+      <option>Consolas</option>
+    </select>
+    <input id="fontSize" type="number" min="10" max="36" value="19" title="Font size" />
+  </aside>
+
+  <button id="sideTab" class="edge-tab" title="Show sidebar" hidden>›</button>
+  <button id="toolTab" class="edge-tab" title="Show toolbar" hidden>‹</button>
+
+  <div id="contextMenu" class="ctx" hidden></div>
+
+  <script src="main.js"></script>
+  <script src="layout.js"></script>
+  <script src="shortcuts.js"></script>
+  <script src="fixes.js"></script>
+</body>
+</html>
